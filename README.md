@@ -112,8 +112,8 @@ This project is licensed under the MIT License.
 ## 👤 Author
 
 **Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+- GitHub: [@ketakitank](https://github.com/yourusername)
+- LinkedIn: [ketaki-tank](https://linkedin.com/in/yourprofile)
 
 ---
 
