@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: movie_rec_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://movieuser:moviepass@db:5432/moviedb
+      - REDIS_URL=redis://redis:6379
+    volumes:
+      - ./backend:/app
+      - ./data:/app/data
+    depends_on:
+      - db
+      - redis
+
+  frontend:
+    build: ./frontend
+    container_name: movie_rec_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_URL=http://localhost:8000
+
+  db:
+    image: postgres:15-alpine
+    container_name: movie_rec_db
+    environment:
+      - POSTGRES_USER=movieuser
+      - POSTGRES_PASSWORD=moviepass
+      - POSTGRES_DB=moviedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: movie_rec_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:

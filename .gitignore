@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Environment
+.env
+.env.local
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints
+
+# Data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.csv
+*.parquet
+
+# Models
+data/models/*
+!data/models/.gitkeep
+*.pkl
+*.joblib
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+
+# Database
+*.db
+*.sqlite3
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Frontend build
+frontend/build/
+frontend/dist/
